@@ -16,11 +16,29 @@ int fib(int n) {
     return b;
 }
 
+template <typename T>
+void bubblesort(vector<T>& v) {
+    for (int i = 0; i < v.size(); i++)
+        for (int j = 0; j < v.size() - 1; j++) {
+            if (v[j] > v[j + 1])
+                swap(v[j], v[j + 1]);
+        }
+
+}
 
 int main()
 {
-    cout << "Hello, world!" << std::endl;
-    cout << fib(10) << std::endl;
-
+    cout << "Hello, world!" << endl;
+    cout << fib(10) << endl;
+    vector<int> v = { 6, 2, 1, 4, 5, 6, 9, 12, 3, 1 };
+    for (int e : v) {
+        cout << e << ' ';
+    }
+    cout << endl;
+    bubblesort(v);
+    for (int e : v) {
+        cout << e << ' ';
+    }
+    cout << endl;
     return 0;
 }
