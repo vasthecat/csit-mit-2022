@@ -22,10 +22,12 @@ int main()
 {
 	std::vector<int> vec = {6, 2, 1, 4, 5, 6, 9, 12, 3, 1};
 
-	std::cout << "fib(13) = " << fib(13) << std::endl;
+	std::cout << "Hello, world!" << std::endl;
+
+	std::cout << fib(10) << std::endl;
 
 	for (int i : vec) std::cout << i << " ";
 	bubble(vec);
-	cout << endl; for (int i : vec) std::cout << i << " ";
-    return 0;
+	std::cout << std::endl; for (int i : vec) std::cout << i << " ";
+	return 0;
 }
