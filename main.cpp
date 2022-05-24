@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -17,10 +18,31 @@ int fib(int n) {
     return a;
 }
 
+void bubble(vector<int>& x) {
+    for (int i = 0; i < x.size() - 1; ++i) {
+        bool f = false;
+        for (int j = 0; j < x.size() - 1 - i; ++j)
+            if (x[j] > x[j + 1]) {
+                swap(x[j], x[j + 1]);
+                f = true;
+            }
+        if (!f)
+            break;
+    }
+}
+
 int main()
 {
     std::cout << "Hello, world!" << std::endl;
     cout << fib(10) << endl;
-    
+    vector<int> x = { 6, 2, 1, 4, 5, 6, 9, 12, 3, 1};
+    for (vector<int>::iterator it = x.begin(); it != x.end(); it++)
+    cout << *it << " ";
+    cout << endl;
+    bubble(x);
+    for (vector<int>::iterator it = x.begin(); it != x.end(); it++)
+    cout << *it << " ";
+    cout << endl;
+
     return 0;
 }
