@@ -1,6 +1,16 @@
-#include <iostream>
+#include <iostream>		
+#include<vector>
 
 using namespace std;
+
+
+void bubble(vector<int>& v) {
+	for (int j = 0; j < v.size(); j++)
+		for (int i = 0; i < v.size() - 1; i++)
+			if (v[i] > v[i + 1])
+				swap(v[i], v[i + 1]);
+}
+
 
 int fib(int n) {
 	int f1 = 0;
@@ -21,9 +31,19 @@ int fib(int n) {
 
 int main()
 {
+	vector<int> v = { 6, 2, 1, 4, 5, 6, 9, 12, 3, 1, };
 
 	cout << "Hello, world!" << endl;
 
-	cout << fib(10);
+	cout << fib(10) << endl; 
 
+	for (int i = 0; i < v.size(); i++)
+		cout << v[i] << " ";
+
+	cout << endl;
+
+	bubble(v);
+
+	for (int i = 0; i < v.size(); i++)
+		cout << v[i] << " ";
 }
